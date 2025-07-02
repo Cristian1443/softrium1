@@ -1,0 +1,36 @@
+/* src/components/ServiceCard.module.css */
+.card {
+    background-color: #21355c; /* Un azul un poco más claro que el fondo */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    border-color: var(--color-primary);
+  }
+  
+  .iconWrapper {
+    display: inline-flex;
+    padding: 1rem;
+    border-radius: 50%;
+    background-color: var(--color-background);
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: #FFFFFF; /* Títulos de tarjeta en blanco para más contraste */
+  }
+  
+  .description {
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }

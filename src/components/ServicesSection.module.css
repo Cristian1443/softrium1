@@ -1,0 +1,16 @@
+/* src/components/ServicesSection.module.css */
+.servicesSection {
+    padding: 5rem 0;
+    text-align: center;
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+  }
+  
+  .servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }

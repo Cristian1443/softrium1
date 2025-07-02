@@ -1,0 +1,25 @@
+/* src/components/PortfolioSection.module.css */
+.portfolioSection {
+    padding: 5rem 0;
+    background-color: var(--color-background); /* Mismo color de fondo */
+  }
+  
+  .sectionTitle {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .sectionSubtitle {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 4rem auto;
+    color: var(--color-text-secondary);
+    font-size: 1.1rem;
+  }
+  
+  .portfolioGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+  }

@@ -1,0 +1,43 @@
+/* src/components/CallToActionSection.module.css */
+.ctaSection {
+    background-color: var(--color-primary);
+    padding: 5rem 0;
+    margin: 5rem 0;
+  }
+  
+  .ctaContent {
+    text-align: center;
+    max-width: 700px;
+  }
+  
+  .title {
+    color: var(--color-background); /* Usamos el color oscuro del fondo para el texto */
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .subtitle {
+    color: rgba(26, 41, 70, 0.8); /* El color del fondo con un poco de transparencia */
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .ctaButton {
+    background-color: #FFFFFF;
+    color: var(--color-primary);
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .ctaButton:hover {
+    background-color: var(--color-background);
+    color: #FFFFFF;
+    transform: translateY(-5px);
+  }

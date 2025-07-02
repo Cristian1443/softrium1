@@ -1,0 +1,83 @@
+/* src/components/AboutSection.module.css */
+.aboutSection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: center;
+    gap: 4rem;
+    padding: 6rem 0;
+  }
+  
+  .imageContainer {
+    order: 2; /* Cambiamos el orden en pantallas grandes si queremos la imagen a la derecha */
+  }
+  
+  .textContainer {
+    order: 1;
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+  }
+  
+  .description {
+    color: var(--color-text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+  
+  .values {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .valueItem h3 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+  
+  .valueItem p {
+    margin: 0;
+    color: var(--color-text-secondary);
+  }
+  
+  .ctaButton {
+    background-color: transparent;
+    color: var(--color-primary);
+    padding: 0.8rem 1.8rem;
+    border: 2px solid var(--color-primary);
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+  
+  .ctaButton:hover {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    transform: translateY(-3px);
+  }
+  
+  /* Hacemos que la imagen vaya arriba en pantallas pequeñas */
+  @media (max-width: 768px) {
+    .imageContainer {
+      order: 1;
+    }
+    .textContainer {
+      order: 2;
+    }
+    .values {
+      flex-direction: column;
+    }
+  }

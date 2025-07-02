@@ -1,0 +1,46 @@
+/* src/App.css */
+
+/* Definiendo los colores de la marca Softrium como variables CSS */
+:root {
+  --color-primary: #0FB4B2;       /* Turquesa principal */
+  --color-background: #1A2946;    /* Azul oscuro de fondo */
+  --color-text: #FFFFFF;          /* Texto blanco */
+  --color-text-secondary: #CCCCCC; /* Texto secundario gris claro */
+  --font-family-sans: 'Poppins', 'Helvetica', 'Arial', sans-serif;
+}
+
+/* Reseteo básico y estilos globales */
+body {
+  margin: 0;
+  font-family: var(--font-family-sans);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1, h2, h3 {
+  color: var(--color-primary);
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.home-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,78 @@
+/* src/components/TechStackSection.module.css */
+.techSection {
+    padding: 5rem 0;
+    text-align: center;
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .sectionSubtitle {
+    max-width: 600px;
+    margin: 0 auto 4rem auto;
+    color: var(--color-text-secondary);
+    font-size: 1.1rem;
+  }
+  
+  .techGrid {
+    display: grid;
+    /* Crea una parrilla responsive con un mínimo de 90px por columna */
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .techItem {
+    position: relative;
+    background-color: #21355c;
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border: 1px solid transparent;
+  }
+  
+  .techItem:hover {
+    transform: translateY(-8px);
+    background-color: var(--color-background);
+    border-color: var(--color-primary);
+  }
+  
+  .techLogo {
+    height: 50px;
+    width: auto;
+    filter: grayscale(100%) brightness(150%); /* Logos en blanco y negro para un look uniforme */
+    transition: filter 0.3s ease;
+  }
+  
+  .techItem:hover .techLogo {
+    filter: grayscale(0%) brightness(100%); /* Color original al pasar el cursor */
+  }
+  
+  .techName {
+    position: absolute;
+    bottom: -30px; /* Posicionado debajo del item */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, bottom 0.3s ease;
+    white-space: nowrap;
+  }
+  
+  .techItem:hover .techName {
+    opacity: 1;
+    visibility: visible;
+    bottom: -35px; /* Aparece un poco más abajo */
+  }

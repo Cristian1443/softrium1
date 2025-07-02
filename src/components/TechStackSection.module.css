@@ -122,3 +122,36 @@
   visibility: visible;
   bottom: -0px;
 }
+
+@media (max-width: 600px) {
+  .techSection {
+    padding: 2rem 0;
+  }
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+  .sectionSubtitle {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+  .scroller {
+    max-width: 100vw;
+    padding: 0 0.5rem;
+  }
+  .scrollerInner {
+    gap: 0.5rem;
+  }
+  .techItem {
+    width: 70px;
+    height: 70px;
+    padding: 0.5rem;
+  }
+  .techLogo {
+    height: 32px;
+  }
+  .techName {
+    font-size: 0.7rem;
+    bottom: -25px;
+    padding: 0.15rem 0.4rem;
+  }
+}

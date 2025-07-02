@@ -1,36 +1,88 @@
 /* src/components/ServiceCard.module.css */
+
 .card {
-    background-color: #21355c; /* Un azul un poco más claro que el fondo */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 2rem;
-    text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-    border-color: var(--color-primary);
-  }
-  
-  .iconWrapper {
-    display: inline-flex;
-    padding: 1rem;
-    border-radius: 50%;
-    background-color: var(--color-background);
-    color: var(--color-primary);
-    margin-bottom: 1.5rem;
-  }
-  
-  .title {
-    font-size: 1.5rem;
-    margin-top: 0;
-    margin-bottom: 0.75rem;
-    color: #FFFFFF; /* Títulos de tarjeta en blanco para más contraste */
-  }
-  
-  .description {
-    color: var(--color-text-secondary);
-    line-height: 1.6;
-  }
+  /* Mantenemos el efecto Glassmorphism */
+  background: rgba(33, 53, 92, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+  padding: 2.5rem; /* Aumentamos el padding para más espacio */
+  min-height: 320px;
+  display: flex;
+  flex-direction: column; /* Alinea el contenido y el footer verticalmente */
+  justify-content: space-between; /* Empuja el footer hacia abajo */
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease-out; /* Hacemos la transición más rápida y responsiva */
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* --- MEJORA UX #1: Feedback al presionar la tarjeta --- */
+.card:active {
+  transform: translateY(-2px) scale(0.98); /* La tarjeta se "hunde" ligeramente */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.1s ease-out;
+}
+
+.content {
+  /* Este div contiene el icono, título y descripción */
+}
+
+.iconWrapper {
+  margin-bottom: 1.5rem;
+  color: var(--color-primary);
+  width: 40px; 
+  height: 40px;
+}
+
+.title {
+  font-size: 1.8rem;
+  margin: 0 0 1rem 0;
+  color: #FFFFFF;
+}
+
+.description {
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* --- MEJORA UX #2: Botón de acción explícito --- */
+.footer {
+  margin-top: 1.5rem; /* Espacio sobre el enlace */
+}
+
+.ctaLink {
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+}
+
+/* Subrayado animado */
+.ctaLink::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: bottom left;
+  transition: transform 0.3s ease-out;
+}
+
+.card:hover .ctaLink::after {
+  transform: scaleX(1); /* Muestra el subrayado al pasar el cursor sobre la tarjeta */
+  transform-origin: bottom left;
+}

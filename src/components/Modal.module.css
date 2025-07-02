@@ -1,0 +1,46 @@
+/* src/components/Modal.module.css */
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 25, 47, 0.8);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+  }
+  
+  .modalContent {
+    background-color: #1a2946;
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid #2e3d5c;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  }
+  
+  .closeButton {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .closeButton:hover {
+    color: var(--color-primary);
+    transform: rotate(90deg);
+  }

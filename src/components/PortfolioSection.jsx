@@ -93,8 +93,8 @@ function PortfolioSection() {
           <h3 className={styles.featuredTitle}>Proyecto Destacado</h3>
           <div className={styles.featuredProject}>
             <div className={styles.featuredImage}>
-              <video 
-                src={featuredProject.video} 
+              <video
+                src={featuredProject.video}
                 autoPlay
                 loop
                 muted
@@ -152,7 +152,7 @@ function PortfolioSection() {
               className={styles.projectWrapper}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <ProjectCard
+              <ProjectCard 
                 image={project.image}
                 video={project.video}
                 client={project.client}

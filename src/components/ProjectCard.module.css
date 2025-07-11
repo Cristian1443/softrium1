@@ -65,6 +65,29 @@
   filter: none !important;
 }
 
+.placeholderVideo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(33, 53, 92, 0.2);
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+.placeholderVideo span {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.placeholderVideo p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
 .video:hover,
 .video:focus,
 .video:active {

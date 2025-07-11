@@ -14,12 +14,16 @@ function ProjectCard({ image, video, client, title, description, tags, id, categ
             loop
             muted
             className={styles.video}
-            poster={image}
           >
             Tu navegador no soporta el elemento video.
           </video>
-        ) : (
+        ) : image ? (
           <img src={image} alt={`Proyecto para ${client}`} className={styles.image} />
+        ) : (
+          <div className={styles.placeholderVideo}>
+            <span>📹</span>
+            <p>Video del proyecto</p>
+          </div>
         )}
         {status && (
           <div className={styles.statusBadge}>

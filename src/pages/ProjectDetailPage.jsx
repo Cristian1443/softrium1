@@ -683,21 +683,25 @@ function ProjectDetailPage() {
             {/* Resultados */}
             <section className={styles.section}>
               <div className={styles.sectionHeader}>
-                <div className={styles.sectionIcon}>🎯</div>
+                <div className={styles.sectionIcon}>📈</div>
                 <h2>Resultados Obtenidos</h2>
               </div>
               <div className={styles.sectionContent}>
                 <div className={styles.resultsGrid}>
                   {project.results?.map((result, index) => (
-                    <div key={index} className={styles.resultCard}>
+                    <div key={index} className={styles.resultItem}>
                       <div className={styles.resultIcon}>{result.icon}</div>
-                      <div className={styles.resultMetric}>{result.metric}</div>
-                      <div className={styles.resultDescription}>{result.description}</div>
+                      <div className={styles.resultDetails}>
+                        <span className={styles.resultMetric}>{result.metric}</span>
+                        <span className={styles.resultDescription}>{result.description}</span>
+                      </div>
                     </div>
                   ))}
                 </div>
               </div>
             </section>
+
+
           </div>
 
           {/* Call to Action */}

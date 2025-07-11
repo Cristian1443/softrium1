@@ -147,12 +147,7 @@ const servicesData = [
   }
 ];
 
-const stats = [
-  { number: "6+", label: "Servicios Especializados", icon: "🎯" },
-  { number: "13+", label: "Proyectos Entregados", icon: "🚀" },
-  { number: "15+", label: "Tecnologías Dominadas", icon: "⚡" },
-  { number: "98%", label: "Satisfacción del Cliente", icon: "⭐" }
-];
+
 
 function ServicesSection() {
   const [selectedService, setSelectedService] = useState(null);
@@ -186,16 +181,6 @@ function ServicesSection() {
               integral de servicios diseñados para llevar tu negocio al siguiente nivel tecnológico.
             </p>
 
-            {/* Statistics */}
-            <div className={styles.statsContainer}>
-              {stats.map((stat, index) => (
-                <div key={index} className={styles.statCard}>
-                  <span className={styles.statIcon}>{stat.icon}</span>
-                  <span className={styles.statNumber}>{stat.number}</span>
-                  <span className={styles.statLabel}>{stat.label}</span>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* Services Grid */}

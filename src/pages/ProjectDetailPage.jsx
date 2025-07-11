@@ -4,9 +4,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import styles from './ProjectDetailPage.module.css';
 
-// Importamos los datos de los proyectos
-import projectImage1 from '../assets/projects/proyecto-1.png';
-import projectImage2 from '../assets/projects/proyecto-2.png';
+// Los proyectos ahora solo usan videos, sin imágenes estáticas
 
 // Importamos los logos de tecnologías
 import reactLogo from '../assets/tech/react.svg';
@@ -52,7 +50,7 @@ const techLogos = {
 const projectsData = [
   {
     id: 'Relacionamiento CCB',
-    image: projectImage1,
+    image: null,
     video: "/assets/video/proyecto-camara-de-comercio.mp4",
     client: "Uniempresarial - CCB",
     title: "Plataforma de Relacionamiento",
@@ -87,7 +85,7 @@ const projectsData = [
   },
   {
     id: 'Events IA',
-    image: projectImage2,
+    image: null,
     video: "/assets/video/EventConnect _ Plataforma de Eventos Empresariales - Brave 2025-06-20 18-29-19.mp4",
     client: "Uniempresarial",
     title: "Events IA",
@@ -126,7 +124,7 @@ const projectsData = [
   },
   {
     id: 'TaskGo',
-    image: projectImage1,
+    image: null,
     video: "/assets/video/videocelular.mp4",
     client: "Proyecto personal",
     title: "TaskGo",
@@ -165,7 +163,7 @@ const projectsData = [
   },
   {
     id: 'fUsoft Web',
-    image: projectImage2,
+    image: null,
     video: "/assets/video/fusoft.mp4",
     client: "FUsoft",
     title: "fUsoft Web",
@@ -204,7 +202,7 @@ const projectsData = [
   },
   {
     id: 'Campus Virtual',
-    image: projectImage1,
+    image: null,
     video: "/assets/video/Campus.mp4",
     client: "Uniempresarial",
     title: "Campus Virtual",
@@ -243,7 +241,7 @@ const projectsData = [
   },
   {
     id: 'VitroCompos',
-    image: projectImage2,
+    image: null,
     video: "/assets/video/VITROCAMPO.mp4",
     client: "VitroCompos",
     title: "VitroCompos Web",
@@ -282,7 +280,7 @@ const projectsData = [
   },
   {
     id: 'CE ASE INGENIERIA',
-    image: projectImage1,
+    image: null,
     video: "/public/assets/video/ce-ace-ingenieria.mp4",
     client: "CE ASE INGENIERIA",
     title: "CE ASE INGENIERIA",
@@ -321,7 +319,7 @@ const projectsData = [
   },
   {
     id: 'FoodBoleros',
-    image: projectImage2,
+    image: null,
     video: "/public/assets/video/foodboleros .mp4",
     client: "FoodBoleros",
     title: "FoodBoleros Web",
@@ -360,7 +358,7 @@ const projectsData = [
   },
   {
     id: 'Gruas Premium',
-    image: projectImage1,
+    image: null,
     video: "/public/assets/video/gruas.mp4",
     client: "Gruas Premium",
     title: "Gruas Premium Web",
@@ -399,7 +397,7 @@ const projectsData = [
   },
   {
     id: 'Juguetes Elite',
-    image: projectImage2,
+    image: null,
     video: "/public/assets/video/jugueteria.mp4",
     client: "Juguetes Elite",
     title: "Juguetes Elite Web",
@@ -438,7 +436,7 @@ const projectsData = [
   },
   {
     id: 'La Mafia Barber Club',
-    image: projectImage1,
+    image: null,
     video: "/public/assets/video/lamafia.mp4",
     client: "La Mafia Barber Club",
     title: "La Mafia Barber Club Web",
@@ -477,7 +475,7 @@ const projectsData = [
   },
   {
     id: 'Fibra Optica',
-    image: projectImage2,
+    image: null,
     video: "/public/assets/video/FIBRAOPTICA.mp4",
     client: "Fibra Optica",
     title: "Fibra Optica Web",
@@ -516,7 +514,7 @@ const projectsData = [
   },
   {
     id: 'Aplicación ATS',
-    image: projectImage1,
+    image: null,
     video: "/public/assets/video/ATS.mp4",
     client: "Movistar",
     title: "Movistar Web",

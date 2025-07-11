@@ -4,14 +4,10 @@ import ProjectCard from './ProjectCard';
 import { ArrowIcon } from './Icons';
 import styles from './PortfolioSection.module.css';
 
-// Importamos las imágenes de los proyectos
-import projectImage1 from '../assets/projects/proyecto-1.png';
-import projectImage2 from '../assets/projects/proyecto-2.png';
-
 const projectsData = [
   {
     id: 'Relacionamiento CCB',
-    image: projectImage1,
+    image: null,
     video: "/assets/video/proyecto-camara-de-comercio.mp4",
     client: "Uniempresarial - CCB",
     title: "Plataforma de Relacionamiento",
@@ -24,7 +20,7 @@ const projectsData = [
   },
   {
     id: 'Campus Virtual',
-    image: projectImage1,
+    image: null,
     video: "/assets/video/Campus.mp4",
     client: "Uniempresarial",
     title: "Campus Virtual",
@@ -37,7 +33,7 @@ const projectsData = [
   },
   {
     id: 'Events IA',
-    image: projectImage2,
+    image: null,
     video: "/assets/video/EventConnect _ Plataforma de Eventos Empresariales - Brave 2025-06-20 18-29-19.mp4",
     client: "Uniempresarial",
     title: "Events IA",
@@ -50,8 +46,6 @@ const projectsData = [
   }
 ];
 
-const categories = ['Todos', 'Educación', 'Eventos'];
-
 const stats = [
   { number: "15+", label: "Proyectos Completados", icon: "📈" },
   { number: "10+", label: "Clientes Satisfechos", icon: "🤝" },
@@ -60,12 +54,7 @@ const stats = [
 ];
 
 function PortfolioSection() {
-  const [activeCategory, setActiveCategory] = useState('Todos');
   const [featuredProject, setFeaturedProject] = useState(projectsData[0]);
-
-  const filteredProjects = activeCategory === 'Todos' 
-    ? projectsData 
-    : projectsData.filter(project => project.category === activeCategory);
 
   return (
     <section id="proyectos" className={styles.portfolioSection}>
@@ -110,7 +99,6 @@ function PortfolioSection() {
                 loop
                 muted
                 className={styles.featuredVideo}
-                poster={featuredProject.image}
               >
                 Tu navegador no soporta el elemento video.
               </video>
@@ -156,25 +144,9 @@ function PortfolioSection() {
           </div>
         </div>
 
-        {/* Category Filters */}
-        <div className={styles.filtersSection}>
-          <h3 className={styles.filtersTitle}>Explorar por Sector</h3>
-          <div className={styles.categoryFilters}>
-            {categories.map((category) => (
-              <button
-                key={category}
-                className={`${styles.filterButton} ${activeCategory === category ? styles.active : ''}`}
-                onClick={() => setActiveCategory(category)}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-        </div>
-
         {/* Projects Grid */}
         <div className={styles.portfolioGrid}>
-          {filteredProjects.map((project, index) => (
+          {projectsData.map((project, index) => (
             <div 
               key={project.id} 
               className={styles.projectWrapper}

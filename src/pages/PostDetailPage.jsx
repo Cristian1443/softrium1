@@ -1380,8 +1380,8 @@ Recuerda: el mejor diseño es invisible. Cuando los usuarios pueden completar su
               <article className={styles.postContent}>
                 <div className={styles.markdownContent}>
                   {renderMarkdownContent(post.content)}
-                </div>
-              </article>
+          </div>
+        </article>
             </div>
           </div>
         </section>

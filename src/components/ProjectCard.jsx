@@ -3,11 +3,24 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './ProjectCard.module.css';
 
-function ProjectCard({ image, client, title, description, tags, id }) {
+function ProjectCard({ image, video, client, title, description, tags, id }) {
   return (
     <div className={styles.card}>
       <div className={styles.imageWrapper}>
-        <img src={image} alt={`Proyecto para ${client}`} className={styles.image} />
+        {video ? (
+          <video 
+            src={video} 
+            autoPlay
+            loop
+            muted
+            className={styles.video}
+            poster={image}
+          >
+            Tu navegador no soporta el elemento video.
+          </video>
+        ) : (
+          <img src={image} alt={`Proyecto para ${client}`} className={styles.image} />
+        )}
       </div>
       <div className={styles.content}>
         <span className={styles.client}>{client}</span>

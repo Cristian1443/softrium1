@@ -6,7 +6,7 @@
   --color-text-secondary: #B4B9C5;
   
   /* Variables de layout */
-  --header-height: 72px;
+  --header-height: 80px;
 
   /* Fuentes */
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -33,7 +33,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: var(--header-height);
+  scroll-padding-top: calc(var(--header-height) + 2rem);
 }
 
 body {

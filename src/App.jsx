@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom'; // 1. Importar componentes de 
 import HomePage from './pages/HomePage';
 import ProjectDetailPage from './pages/ProjectDetailPage'; // 2. Importar la nueva página
 import BlogPage from './pages/BlogPage';
+import PostDetailPage from './pages/PostDetailPage'; // Importar página de detalle del post
 import ContactPage from './pages/ContactPage';
 import ServicesPage from './pages/ServicesPage';
 import ProjectsPage from './pages/ProjectsPage';
@@ -26,6 +27,8 @@ function App() {
         {/* La ruta para los detalles del proyecto. :projectId es un parámetro dinámico. */}
         <Route path="/proyecto/:projectId" element={<ProjectDetailPage />} />
         <Route path="/blog" element={<BlogPage />} />
+        {/* La ruta para los detalles del post del blog. :id es un parámetro dinámico. */}
+        <Route path="/blog/:id" element={<PostDetailPage />} />
         <Route path="/contacto" element={<ContactPage />} />
       </Routes>
     </div>

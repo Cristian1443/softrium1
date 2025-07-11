@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { MailIcon, LinkedInIcon } from '../components/Icons';
 import styles from './ContactPage.module.css';
 
 function ContactPage() {
@@ -8,8 +9,14 @@ function ContactPage() {
     nombre: '',
     email: '',
     empresa: '',
+    telefono: '',
+    servicio: '',
+    presupuesto: '',
     mensaje: ''
   });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,107 +26,323 @@ function ContactPage() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Aquí iría la lógica para enviar el formulario
+    setIsSubmitting(true);
+    
+    // Simular envío del formulario
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
     console.log('Formulario enviado:', formData);
-    // Resetear el formulario
-    setFormData({
-      nombre: '',
-      email: '',
-      empresa: '',
-      mensaje: ''
-    });
-    alert('¡Gracias por contactarnos! Te responderemos pronto.');
+    setSubmitted(true);
+    setIsSubmitting(false);
+    
+    // Resetear el formulario después de 3 segundos
+    setTimeout(() => {
+      setFormData({
+        nombre: '',
+        email: '',
+        empresa: '',
+        telefono: '',
+        servicio: '',
+        presupuesto: '',
+        mensaje: ''
+      });
+      setSubmitted(false);
+    }, 3000);
   };
+
+  const servicios = [
+    'Desarrollo Web',
+    'Desarrollo Móvil',
+    'Consultoría IT',
+    'DevOps',
+    'UI/UX Design',
+    'Mantenimiento',
+    'Otro'
+  ];
+
+  const presupuestos = [
+    'Menos de $2,000,000 COP',
+    '$2,000,000 - $8,000,000 COP',
+    '$8,000,000 - $15,000,000 COP',
+    '$15,000,000 - $25,000,000 COP',
+    'Más de $25,000,000 COP',
+    'A definir'
+  ];
 
   return (
     <>
       <Header />
       <main className={styles.contactPage}>
+        {/* Hero Section */}
+        <section className={styles.hero}>
+          <div className="container">
+            <div className={styles.heroContent}>
+              <h1>¿Listo para Transformar tu Idea?</h1>
+              <p>
+                Conectemos y convirtamos tu visión en una solución tecnológica innovadora. 
+                Nuestro equipo está aquí para acompañarte en cada paso del proceso.
+              </p>
+              <div className={styles.heroStats}>
+                <div className={styles.statItem}>
+                  <span className={styles.statNumber}>24h</span>
+                  <span className={styles.statLabel}>Respuesta</span>
+                </div>
+                <div className={styles.statItem}>
+                  <span className={styles.statNumber}>13+</span>
+                  <span className={styles.statLabel}>Proyectos</span>
+                </div>
+                <div className={styles.statItem}>
+                  <span className={styles.statNumber}>98%</span>
+                  <span className={styles.statLabel}>Satisfacción</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <div className="container">
           <div className={styles.content}>
+            {/* Información de Contacto */}
             <div className={styles.contactInfo}>
-              <h1>Hablemos de tu Proyecto</h1>
-              <p className={styles.subtitle}>
-                ¿Tienes una idea innovadora o un desafío tecnológico? 
-                Estamos aquí para ayudarte a convertirlo en realidad.
-              </p>
-              <div className={styles.infoCards}>
-                <div className={styles.infoCard}>
-                  <h3>Ubicación</h3>
-                  <p>Ciudad de México, México</p>
+              <div className={styles.infoSection}>
+                <h2>Información de Contacto</h2>
+                <p className={styles.infoDescription}>
+                  Estamos disponibles para resolver tus dudas y comenzar a trabajar juntos.
+                </p>
+
+                <div className={styles.infoCards}>
+                  <div className={styles.infoCard}>
+                    <div className={styles.infoIcon}>
+                      <i className="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div className={styles.infoContent}>
+                      <h3>Ubicación</h3>
+                      <p>Bogotá, Colombia</p>
+                      <span className={styles.infoExtra}>Trabajo remoto disponible</span>
+                    </div>
+                  </div>
+
+                  <div className={styles.infoCard}>
+                    <div className={styles.infoIcon}>
+                      <MailIcon />
+                    </div>
+                    <div className={styles.infoContent}>
+                      <h3>Email</h3>
+                      <a href="mailto:contacto@softrium.com">contacto@softrium.com</a>
+                      <span className={styles.infoExtra}>Respuesta en 24 horas</span>
+                    </div>
+                  </div>
+
+                  <div className={styles.infoCard}>
+                    <div className={styles.infoIcon}>
+                      <i className="fas fa-phone-alt"></i>
+                    </div>
+                    <div className={styles.infoContent}>
+                      <h3>Teléfono</h3>
+                      <a href="tel:+573006136656">+57 (300) 613-6656</a>
+                      <span className={styles.infoExtra}>WhatsApp disponible</span>
+                    </div>
+                  </div>
+
+                  <div className={styles.infoCard}>
+                    <div className={styles.infoIcon}>
+                      <i className="fas fa-clock"></i>
+                    </div>
+                    <div className={styles.infoContent}>
+                      <h3>Horario</h3>
+                      <p>Lun - Vie: 9:00 AM - 10:00 PM</p>
+                      <span className={styles.infoExtra}>Zona horaria: GMT-5</span>
+                    </div>
+                  </div>
                 </div>
-                <div className={styles.infoCard}>
-                  <h3>Email</h3>
-                  <a href="mailto:contacto@softrium.com">contacto@softrium.com</a>
-                </div>
-                <div className={styles.infoCard}>
-                  <h3>Horario</h3>
-                  <p>Lunes a Viernes<br />9:00 AM - 6:00 PM</p>
+
+                <div className={styles.socialSection}>
+                  <h3>Síguenos</h3>
+                  <div className={styles.socialLinks}>
+                    <a href="#" className={styles.socialLink}>
+                      <LinkedInIcon />
+                      <span>LinkedIn</span>
+                    </a>
+                    <a href="#" className={styles.socialLink}>
+                      <i className="fab fa-github"></i>
+                      <span>GitHub</span>
+                    </a>
+                    <a href="#" className={styles.socialLink}>
+                      <i className="fab fa-twitter"></i>
+                      <span>Twitter</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
 
+            {/* Formulario de Contacto */}
             <div className={styles.formContainer}>
-              <form className={styles.contactForm} onSubmit={handleSubmit}>
-                <div className={styles.formGroup}>
-                  <label htmlFor="nombre">Nombre completo *</label>
-                  <input
-                    type="text"
-                    id="nombre"
-                    name="nombre"
-                    value={formData.nombre}
-                    onChange={handleChange}
-                    required
-                    placeholder="¿Cómo te llamas?"
-                  />
+              {submitted ? (
+                <div className={styles.successMessage}>
+                  <div className={styles.successIcon}>
+                    <i className="fas fa-check-circle"></i>
+                  </div>
+                  <h3>¡Mensaje Enviado!</h3>
+                  <p>Gracias por contactarnos. Te responderemos en las próximas 24 horas.</p>
                 </div>
+              ) : (
+                <form className={styles.contactForm} onSubmit={handleSubmit}>
+                  <div className={styles.formHeader}>
+                    <h2>Cuéntanos sobre tu Proyecto</h2>
+                    <p>Completa el formulario y te contactaremos pronto.</p>
+                  </div>
 
-                <div className={styles.formGroup}>
-                  <label htmlFor="email">Correo electrónico *</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    placeholder="tu@email.com"
-                  />
-                </div>
+                  <div className={styles.formRow}>
+                    <div className={styles.formGroup}>
+                      <label htmlFor="nombre">Nombre completo *</label>
+                      <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        value={formData.nombre}
+                        onChange={handleChange}
+                        required
+                        placeholder="Juan Pérez"
+                      />
+                    </div>
 
-                <div className={styles.formGroup}>
-                  <label htmlFor="empresa">Empresa</label>
-                  <input
-                    type="text"
-                    id="empresa"
-                    name="empresa"
-                    value={formData.empresa}
-                    onChange={handleChange}
-                    placeholder="¿Dónde trabajas?"
-                  />
-                </div>
+                    <div className={styles.formGroup}>
+                      <label htmlFor="email">Correo electrónico *</label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        placeholder="juan@empresa.com"
+                      />
+                    </div>
+                  </div>
 
-                <div className={styles.formGroup}>
-                  <label htmlFor="mensaje">¿Cómo podemos ayudarte? *</label>
-                  <textarea
-                    id="mensaje"
-                    name="mensaje"
-                    value={formData.mensaje}
-                    onChange={handleChange}
-                    required
-                    rows="5"
-                    placeholder="Cuéntanos sobre tu proyecto..."
-                  ></textarea>
-                </div>
+                  <div className={styles.formRow}>
+                    <div className={styles.formGroup}>
+                      <label htmlFor="empresa">Empresa</label>
+                      <input
+                        type="text"
+                        id="empresa"
+                        name="empresa"
+                        value={formData.empresa}
+                        onChange={handleChange}
+                        placeholder="Mi Empresa S.A.S"
+                      />
+                    </div>
 
-                <button type="submit" className={styles.submitButton}>
-                  Enviar Mensaje
-                </button>
-              </form>
+                    <div className={styles.formGroup}>
+                      <label htmlFor="telefono">Teléfono</label>
+                      <input
+                        type="tel"
+                        id="telefono"
+                        name="telefono"
+                        value={formData.telefono}
+                        onChange={handleChange}
+                        placeholder="+57 300 123 4567"
+                      />
+                    </div>
+                  </div>
+
+                  <div className={styles.formRow}>
+                    <div className={styles.formGroup}>
+                      <label htmlFor="servicio">Servicio de Interés *</label>
+                      <select
+                        id="servicio"
+                        name="servicio"
+                        value={formData.servicio}
+                        onChange={handleChange}
+                        required
+                      >
+                        <option value="">Selecciona un servicio</option>
+                        {servicios.map(servicio => (
+                          <option key={servicio} value={servicio}>{servicio}</option>
+                        ))}
+                      </select>
+                    </div>
+
+                    <div className={styles.formGroup}>
+                      <label htmlFor="presupuesto">Presupuesto Estimado</label>
+                      <select
+                        id="presupuesto"
+                        name="presupuesto"
+                        value={formData.presupuesto}
+                        onChange={handleChange}
+                      >
+                        <option value="">Selecciona un rango</option>
+                        {presupuestos.map(presupuesto => (
+                          <option key={presupuesto} value={presupuesto}>{presupuesto}</option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className={styles.formGroup}>
+                    <label htmlFor="mensaje">Describe tu proyecto *</label>
+                    <textarea
+                      id="mensaje"
+                      name="mensaje"
+                      value={formData.mensaje}
+                      onChange={handleChange}
+                      required
+                      rows="5"
+                      placeholder="Cuéntanos qué quieres lograr, qué características necesitas, timeline esperado, etc."
+                    ></textarea>
+                  </div>
+
+                  <button 
+                    type="submit" 
+                    className={styles.submitButton}
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <span className={styles.spinner}></span>
+                        Enviando...
+                      </>
+                    ) : (
+                      <>
+                        Enviar Mensaje
+                        <i className="fas fa-paper-plane"></i>
+                      </>
+                    )}
+                  </button>
+
+                  <p className={styles.formNote}>
+                    * Campos obligatorios. Tu información está protegida y no será compartida.
+                  </p>
+                </form>
+              )}
             </div>
           </div>
+
+          {/* FAQ Section */}
+          <section className={styles.faqSection}>
+            <h2 className={styles.faqTitle}>Preguntas Frecuentes</h2>
+            <div className={styles.faqGrid}>
+              <div className={styles.faqItem}>
+                <h3>¿Cuánto tiempo toma desarrollar un proyecto?</h3>
+                <p>Depende del alcance, pero típicamente entre 4-12 semanas para proyectos web y 8-16 semanas para aplicaciones móviles complejas.</p>
+              </div>
+              <div className={styles.faqItem}>
+                <h3>¿Ofrecen soporte post-lanzamiento?</h3>
+                <p>Sí, incluimos 3 meses de soporte gratuito y ofrecemos planes de mantenimiento a largo plazo.</p>
+              </div>
+              <div className={styles.faqItem}>
+                <h3>¿Trabajan con clientes internacionales?</h3>
+                <p>Absolutamente. Trabajamos con clientes en Latinoamérica, España y Estados Unidos.</p>
+              </div>
+              <div className={styles.faqItem}>
+                <h3>¿Qué metodología de desarrollo utilizan?</h3>
+                <p>Utilizamos metodologías ágiles (Scrum) con entregas incrementales y comunicación constante.</p>
+              </div>
+            </div>
+          </section>
         </div>
       </main>
       <Footer />

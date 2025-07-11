@@ -71,7 +71,7 @@ const projectsData = [
   {
     id: 'CE ASE INGENIERIA',
     image: null,
-    video: "/public/assets/video/ce-ace-ingenieria.mp4",
+    video: "/assets/video/ce-ace-ingenieria.mp4",
     client: "CE ASE INGENIERIA",
     title: "CE ASE INGENIERIA",
     description: "Tienda online completa para CE-ACE Ingeniería, permitiendo la venta de productos y servicios de ingeniería de forma digital.",
@@ -81,7 +81,7 @@ const projectsData = [
   {
     id: 'FoodBoleros',
     image: null,
-    video: "/public/assets/video/foodboleros .mp4",
+    video: "/assets/video/foodboleros .mp4",
     client: "FoodBoleros",
     title: "FoodBoleros Web",
     description: "Sitio web corporativo para FoodBoleros, empresa especializada en la venta de productos de alimentos y bebidas.",
@@ -91,7 +91,7 @@ const projectsData = [
   {
     id: 'Gruas Premium',
     image: null,
-    video: "/public/assets/video/gruas.mp4",
+    video: "/assets/video/gruas.mp4",
     client: "Gruas Premium",
     title: "Gruas Premium Web",
     description: "Sitio web corporativo para Gruas Premium, empresa especializada en la venta de productos de grúas y maquinaria pesada.",
@@ -101,7 +101,7 @@ const projectsData = [
   {
     id: 'Juguetes Elite',
     image: null,
-    video: "/public/assets/video/jugueteria.mp4",
+    video: "/assets/video/jugueteria.mp4",
     client: "Juguetes Elite",
     title: "Juguetes Elite Web",
     description: "Sitio web corporativo para Juguetes Elite, empresa especializada en la venta de productos de juguetes y artículos para bebés.",
@@ -111,7 +111,7 @@ const projectsData = [
   {
     id: 'La Mafia Barber Club',
     image: null,
-    video: "/public/assets/video/lamafia.mp4",
+    video: "/assets/video/lamafia.mp4",
     client: "La Mafia Barber Club",
     title: "La Mafia Barber Club Web",
     description: "Sitio web corporativo para La Mafia Barber Club, empresa especializada en la venta de productos de barbería y cuidado personal.",
@@ -121,7 +121,7 @@ const projectsData = [
   {
     id: 'Fibra Optica',
     image: null,
-    video: "/public/assets/video/FIBRAOPTICA.mp4",
+    video: "/assets/video/FIBRAOPTICA.mp4",
     client: "Fibra Optica",
     title: "Fibra Optica Web",
     description: "Plataforma web para la venta de fibra óptica, permitiendo a los usuarios realizar compras y gestionar pedidos en línea.",
@@ -131,7 +131,7 @@ const projectsData = [
   {
     id: 'Aplicación ATS',
     image: null,
-    video: "/public/assets/video/ATS.mp4",
+    video: "/assets/video/ATS.mp4",
     client: "Movistar",
     title: "Movistar Web",
     description: "App móvil para la gestión de actividades de los técnicos ATS, permitiendo reportes y seguimiento en campo desde dispositivos móviles",

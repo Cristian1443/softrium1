@@ -1,22 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { MailIcon, LinkedInIcon } from '../components/Icons';
 import styles from './ContactPage.module.css';
+import emailjs from '@emailjs/browser';
 
 function ContactPage() {
   const [formData, setFormData] = useState({
-    nombre: '',
+    name: '',
     email: '',
     empresa: '',
     telefono: '',
     servicio: '',
     presupuesto: '',
-    mensaje: ''
+    message: ''
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const formRef = useRef();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,27 +31,28 @@ function ContactPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simular envío del formulario
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    console.log('Formulario enviado:', formData);
-    setSubmitted(true);
-    setIsSubmitting(false);
-    
-    // Resetear el formulario después de 3 segundos
-    setTimeout(() => {
+    try {
+      await emailjs.sendForm(
+        'service_4njhsnv',
+        'template_0i65sj9',
+        formRef.current,
+        'Q1JvC5Eo83KtdxXj_'
+      );
+      setSubmitted(true);
       setFormData({
-        nombre: '',
+        name: '',
         email: '',
         empresa: '',
         telefono: '',
         servicio: '',
         presupuesto: '',
-        mensaje: ''
+        message: ''
       });
-      setSubmitted(false);
-    }, 3000);
+      setTimeout(() => setSubmitted(false), 3000);
+    } catch {
+      alert('Error al enviar el mensaje. Intenta de nuevo.');
+    }
+    setIsSubmitting(false);
   };
 
   const servicios = [
@@ -110,27 +113,27 @@ function ContactPage() {
                 <h2>Información de Contacto</h2>
                 <p className={styles.infoDescription}>
                   Estamos disponibles para resolver tus dudas y comenzar a trabajar juntos.
-                </p>
+              </p>
 
-                <div className={styles.infoCards}>
-                  <div className={styles.infoCard}>
+              <div className={styles.infoCards}>
+                <div className={styles.infoCard}>
                     <div className={styles.infoIcon}>
                       <i className="fas fa-map-marker-alt"></i>
                     </div>
                     <div className={styles.infoContent}>
-                      <h3>Ubicación</h3>
+                  <h3>Ubicación</h3>
                       <p>Bogotá, Colombia</p>
                       <span className={styles.infoExtra}>Trabajo remoto disponible</span>
                     </div>
-                  </div>
+                </div>
 
-                  <div className={styles.infoCard}>
+                <div className={styles.infoCard}>
                     <div className={styles.infoIcon}>
                       <MailIcon />
                     </div>
                     <div className={styles.infoContent}>
-                      <h3>Email</h3>
-                      <a href="mailto:contacto@softrium.com">contacto@softrium.com</a>
+                  <h3>Email</h3>
+                  <a href="mailto:contacto@softrium.com">contacto@softrium.com</a>
                       <span className={styles.infoExtra}>Respuesta en 24 horas</span>
                     </div>
                   </div>
@@ -189,54 +192,54 @@ function ContactPage() {
                   <p>Gracias por contactarnos. Te responderemos en las próximas 24 horas.</p>
                 </div>
               ) : (
-                <form className={styles.contactForm} onSubmit={handleSubmit}>
+              <form ref={formRef} className={styles.contactForm} onSubmit={handleSubmit}>
                   <div className={styles.formHeader}>
                     <h2>Cuéntanos sobre tu Proyecto</h2>
                     <p>Completa el formulario y te contactaremos pronto.</p>
                   </div>
 
                   <div className={styles.formRow}>
-                    <div className={styles.formGroup}>
-                      <label htmlFor="nombre">Nombre completo *</label>
-                      <input
-                        type="text"
-                        id="nombre"
-                        name="nombre"
-                        value={formData.nombre}
-                        onChange={handleChange}
-                        required
+                <div className={styles.formGroup}>
+                  <label htmlFor="name">Nombre completo *</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
                         placeholder="Juan Pérez"
-                      />
-                    </div>
+                  />
+                </div>
 
-                    <div className={styles.formGroup}>
-                      <label htmlFor="email">Correo electrónico *</label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
+                <div className={styles.formGroup}>
+                  <label htmlFor="email">Correo electrónico *</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
                         placeholder="juan@empresa.com"
-                      />
+                  />
                     </div>
-                  </div>
+                </div>
 
                   <div className={styles.formRow}>
-                    <div className={styles.formGroup}>
-                      <label htmlFor="empresa">Empresa</label>
-                      <input
-                        type="text"
-                        id="empresa"
-                        name="empresa"
-                        value={formData.empresa}
-                        onChange={handleChange}
+                <div className={styles.formGroup}>
+                  <label htmlFor="empresa">Empresa</label>
+                  <input
+                    type="text"
+                    id="empresa"
+                    name="empresa"
+                    value={formData.empresa}
+                    onChange={handleChange}
                         placeholder="Mi Empresa S.A.S"
-                      />
-                    </div>
+                  />
+                </div>
 
-                    <div className={styles.formGroup}>
+                <div className={styles.formGroup}>
                       <label htmlFor="telefono">Teléfono</label>
                       <input
                         type="tel"
@@ -283,17 +286,17 @@ function ContactPage() {
                   </div>
 
                   <div className={styles.formGroup}>
-                    <label htmlFor="mensaje">Describe tu proyecto *</label>
-                    <textarea
-                      id="mensaje"
-                      name="mensaje"
-                      value={formData.mensaje}
-                      onChange={handleChange}
-                      required
-                      rows="5"
+                    <label htmlFor="message">Describe tu proyecto *</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows="5"
                       placeholder="Cuéntanos qué quieres lograr, qué características necesitas, timeline esperado, etc."
-                    ></textarea>
-                  </div>
+                  ></textarea>
+                </div>
 
                   <button 
                     type="submit" 
@@ -307,16 +310,16 @@ function ContactPage() {
                       </>
                     ) : (
                       <>
-                        Enviar Mensaje
+                  Enviar Mensaje
                         <i className="fas fa-paper-plane"></i>
                       </>
                     )}
-                  </button>
+                </button>
 
                   <p className={styles.formNote}>
                     * Campos obligatorios. Tu información está protegida y no será compartida.
                   </p>
-                </form>
+              </form>
               )}
             </div>
           </div>

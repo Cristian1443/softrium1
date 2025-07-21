@@ -56,13 +56,13 @@ function HeroSection() {
               <span>Desarrollo Ágil & Innovador</span>
             </div>
             
-            <h1 className={styles.title}>
+        <h1 className={styles.title}>
               Transformamos Ideas en 
               <span className={styles.highlight}> Soluciones Digitales</span>
               <br />de Alto Impacto
-            </h1>
+        </h1>
             
-            <p className={styles.subtitle}>
+        <p className={styles.subtitle}>
               Somos Softrium, tu fábrica de software especializada en crear aplicaciones web, 
               móviles y sistemas empresariales que <strong>impulsan el crecimiento</strong> de tu negocio.
             </p>
@@ -84,7 +84,7 @@ function HeroSection() {
               </Link>
               <Link to="/servicios" className={styles.ctaSecondary}>
                 Ver Nuestros Servicios
-              </Link>
+        </Link>
             </div>
 
             <div className={styles.socialProof}>

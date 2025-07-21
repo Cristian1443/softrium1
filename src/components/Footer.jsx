@@ -28,6 +28,7 @@ function Footer() {
           <div className={styles.footerContent}>
             <div className={styles.footerSection}>
               <div className={styles.brand}>
+                <img src="/src/assets/blog/logo_softrium.png" alt="Logo Softrium" style={{height: '180px', margin: '0 auto 1rem', display: 'block'}} />
                 <h2>Softrium</h2>
                 <p>Impulsamos la innovación digital con soluciones tecnológicas de vanguardia, transformando ideas en experiencias excepcionales.</p>
                 <div className={styles.socialLinks}>

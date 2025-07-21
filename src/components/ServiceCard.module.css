@@ -208,7 +208,7 @@
     align-items: center;
     flex-direction: row;
     gap: 1rem;
-  }
+}
 
   .iconWrapper {
     width: 50px;

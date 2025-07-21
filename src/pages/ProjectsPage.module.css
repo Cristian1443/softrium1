@@ -279,11 +279,11 @@
   
   .heroStats {
     gap: 2rem;
-  }
-  
-  .projectsGrid {
+}
+
+.projectsGrid {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+  gap: 2rem;
   }
 }
 

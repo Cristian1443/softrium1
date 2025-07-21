@@ -18,7 +18,7 @@ function ProjectCard({ image, video, client, title, description, tags, id, categ
             Tu navegador no soporta el elemento video.
           </video>
         ) : image ? (
-          <img src={image} alt={`Proyecto para ${client}`} className={styles.image} />
+        <img src={image} alt={`Proyecto para ${client}`} className={styles.image} />
         ) : (
           <div className={styles.placeholderVideo}>
             <span>📹</span>
@@ -37,7 +37,7 @@ function ProjectCard({ image, video, client, title, description, tags, id, categ
       <div className={styles.content}>
         <div className={styles.header}>
           <div className={styles.clientSection}>
-            <span className={styles.client}>{client}</span>
+        <span className={styles.client}>{client}</span>
             {year && <span className={styles.year}>{year}</span>}
           </div>
           {category && (

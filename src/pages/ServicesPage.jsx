@@ -263,7 +263,7 @@ function ServicesPage() {
             </div>
 
             <div className={styles.serviceDetails}>
-              {services.map((service) => (
+          {services.map((service) => (
                 activeTab === service.id && (
                   <div key={service.id} className={styles.serviceContent}>
                     <div className={styles.serviceInfo}>
@@ -279,7 +279,7 @@ function ServicesPage() {
                       <div className={styles.serviceFeatures}>
                         <h4>¿Qué incluye?</h4>
                         <div className={styles.featuresGrid}>
-                          {service.features.map((feature, index) => (
+                {service.features.map((feature, index) => (
                             <div key={index} className={styles.featureItem}>
                               <CheckIcon />
                               <span>{feature}</span>
@@ -350,8 +350,8 @@ function ServicesPage() {
                         <CheckIcon />
                         <span>{feature}</span>
                       </li>
-                    ))}
-                  </ul>
+                ))}
+              </ul>
                   <a href="/contacto" className={styles.packageButton}>
                     Solicitar Cotización
                   </a>
@@ -376,8 +376,8 @@ function ServicesPage() {
                     <strong>{testimonial.name}</strong>
                     <span>{testimonial.company}</span>
                   </div>
-                </div>
-              ))}
+            </div>
+          ))}
             </div>
           </section>
 
@@ -398,7 +398,7 @@ function ServicesPage() {
                 </a>
               </div>
             </div>
-          </section>
+        </section>
         </div>
       </main>
       <Footer />

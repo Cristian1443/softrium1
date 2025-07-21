@@ -564,7 +564,7 @@ function ProjectDetailPage() {
         <main className="container">
           <div className={styles.notFound}>
             <h1>🔍 Proyecto no encontrado</h1>
-            <p>Lo sentimos, el proyecto que buscas no existe.</p>
+          <p>Lo sentimos, el proyecto que buscas no existe.</p>
             <Link to="/proyectos" className={styles.backButton}>
               ← Volver a Proyectos
             </Link>
@@ -596,14 +596,14 @@ function ProjectDetailPage() {
             <div className={styles.heroContent}>
               <div className={styles.heroText}>
                 <div className={styles.projectMeta}>
-                  <span className={styles.client}>{project.client}</span>
+              <span className={styles.client}>{project.client}</span>
                   <div className={styles.metaInfo}>
                     <span>📅 {project.year}</span>
                     <span>⏱️ {project.duration}</span>
                     <span>👥 {project.team}</span>
                   </div>
                 </div>
-                <h1 className={styles.title}>{project.title}</h1>
+              <h1 className={styles.title}>{project.title}</h1>
                 <p className={styles.subtitle}>{project.description}</p>
                 
                 {/* Tech Stack con logos */}
@@ -617,11 +617,11 @@ function ProjectDetailPage() {
                         )}
                         <span>{tech}</span>
                       </div>
-                    ))}
-                  </div>
-                </div>
+                ))}
               </div>
-              
+            </div>
+          </div>
+
               <div className={styles.heroImage}>
                 {project.video ? (
                   <video 
@@ -696,9 +696,9 @@ function ProjectDetailPage() {
                         <span className={styles.resultDescription}>{result.description}</span>
                       </div>
                     </div>
-                  ))}
+                ))}
                 </div>
-              </div>
+            </div>
             </section>
 
 

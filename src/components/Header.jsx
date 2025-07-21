@@ -29,6 +29,7 @@ function Header() {
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={`${styles.headerContainer} container`}>
         <Link to="/" className={styles.logo}>
+          <img src="/src/assets/blog/logo_softrium.png" alt="Logo Softrium" style={{height: '160px', marginRight: '24px'}} />
           <span className={styles.logoText}>Softrium</span>
         </Link>
         

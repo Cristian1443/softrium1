@@ -219,17 +219,17 @@ function ProjectsPage() {
             {/* Grid */}
             <div className={styles.projectsGrid}>
               {filteredProjects.map((project) => (
-                <ProjectCard
-                  key={project.id}
-                  image={project.image}
+            <ProjectCard
+              key={project.id}
+              image={project.image}
                   video={project.video}
-                  client={project.client}
-                  title={project.title}
-                  description={project.description}
-                  tags={project.tags}
-                  id={project.id}
-                />
-              ))}
+              client={project.client}
+              title={project.title}
+              description={project.description}
+              tags={project.tags}
+              id={project.id}
+            />
+          ))}
             </div>
           </div>
         </section>

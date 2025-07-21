@@ -101,9 +101,9 @@ function BlogPage() {
       <main className={styles.blogPage}>
         {/* Hero Section */}
         <section className={styles.hero}>
-          <div className="container">
+        <div className="container">
             <div className={styles.heroContent}>
-              <h1>Blog de Softrium</h1>
+            <h1>Blog de Softrium</h1>
               <p>
                 Explora nuestros artículos sobre desarrollo de software, tecnología y las últimas tendencias 
                 en el mundo digital. Mantente actualizado con contenido de calidad creado por nuestros expertos.
@@ -223,19 +223,19 @@ function BlogPage() {
               <div className={styles.postsCount}>
                 {filteredPosts.length} artículo{filteredPosts.length !== 1 ? 's' : ''}
               </div>
-            </div>
-            
-            <div className={styles.postsGrid}>
+          </div>
+          
+          <div className={styles.postsGrid}>
               {regularPosts.map(post => (
-                <article key={post.id} className={styles.postCard}>
-                  <div className={styles.postImage}>
-                    <img src={post.image} alt={post.title} />
+              <article key={post.id} className={styles.postCard}>
+                <div className={styles.postImage}>
+                  <img src={post.image} alt={post.title} />
                     <div className={styles.categoryTag}>{post.category}</div>
-                  </div>
-                  <div className={styles.postContent}>
+                </div>
+                <div className={styles.postContent}>
                     <h3>{post.title}</h3>
-                    <p className={styles.excerpt}>{post.excerpt}</p>
-                    <div className={styles.postMeta}>
+                  <p className={styles.excerpt}>{post.excerpt}</p>
+                  <div className={styles.postMeta}>
                       <div className={styles.metaGroup}>
                         <UserIcon className={styles.metaIcon} />
                         <span>{post.author}</span>
@@ -243,13 +243,13 @@ function BlogPage() {
                       <div className={styles.metaGroup}>
                         <CalendarIcon className={styles.metaIcon} />
                         <span>
-                          {new Date(post.date).toLocaleDateString('es-ES', {
-                            year: 'numeric',
+                      {new Date(post.date).toLocaleDateString('es-ES', {
+                        year: 'numeric',
                             month: 'short',
-                            day: 'numeric'
-                          })}
-                        </span>
-                      </div>
+                        day: 'numeric'
+                      })}
+                    </span>
+                  </div>
                       <div className={styles.metaGroup}>
                         <ClockIcon className={styles.metaIcon} />
                         <span>{post.readTime}</span>
@@ -263,10 +263,10 @@ function BlogPage() {
                     <Link to={`/blog/${post.id}`} className={styles.readMore}>
                       Leer más
                     </Link>
-                  </div>
-                </article>
-              ))}
-            </div>
+                </div>
+              </article>
+            ))}
+          </div>
 
             {filteredPosts.length === 0 && (
               <div className={styles.noResults}>

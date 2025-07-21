@@ -8,8 +8,8 @@ function ServiceCard({ icon, title, description, category, duration, onClick }) 
       
       <div className={styles.content}>
         <div className={styles.header}>
-          <div className={styles.iconWrapper}>
-            {icon}
+        <div className={styles.iconWrapper}>
+          {icon}
           </div>
           <div className={styles.meta}>
             <span className={styles.category}>{category}</span>

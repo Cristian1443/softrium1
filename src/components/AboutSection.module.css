@@ -121,9 +121,9 @@
 
 /* Main Content Layout */
 .mainContent {
-  display: grid;
+    display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+    gap: 4rem;
   margin-bottom: 5rem;
   animation: fadeInUp 0.8s ease-out 0.2s both;
 }
@@ -133,23 +133,23 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-}
-
-.imageContainer {
+  }
+  
+  .imageContainer {
   position: relative;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-}
-
+  }
+  
 .imageContainer:hover {
   transform: translateY(-10px);
-}
-
+  }
+  
 .teamImage {
-  width: 100%;
-  height: auto;
+    width: 100%;
+    height: auto;
   display: block;
   transition: transform 0.3s ease;
 }
@@ -664,13 +664,13 @@
     width: 80px;
     height: 3px;
   }
-
+  
   .sectionTitle {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
     line-height: 1.2;
   }
-
+  
   .sectionTitle::after {
     width: 50px;
     height: 2px;
@@ -685,7 +685,7 @@
   .mainContent {
     gap: 2rem;
   }
-
+  
   .imageSection {
     gap: 1.5rem;
   }
@@ -697,17 +697,17 @@
   .contentSection {
     gap: 2rem;
   }
-
+  
   .valuesTitle,
   .achievementsTitle {
     font-size: 1.5rem;
   }
-
+  
   .achievementsGrid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-
+  
   .statsGrid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
@@ -716,17 +716,17 @@
   .statCard {
     padding: 1.5rem 1rem;
   }
-
+  
   .ctaSection {
     padding: 2rem 1rem;
   }
-
+  
   .ctaContent h3 {
     font-size: 1.5rem;
-  }
+    }
 
   .ctaButtons {
-    flex-direction: column;
+      flex-direction: column;
     align-items: center;
   }
 
@@ -781,5 +781,5 @@
 
   .ctaSection {
     padding: 1.5rem 1rem;
+    }
   }
-}

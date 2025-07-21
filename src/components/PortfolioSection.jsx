@@ -71,7 +71,7 @@ function PortfolioSection() {
             <span className={styles.highlight}> Transforman Negocios</span>
           </h2>
           
-          <p className={styles.sectionSubtitle}>
+      <p className={styles.sectionSubtitle}>
             Descubre cómo hemos ayudado a empresas de diferentes sectores a alcanzar sus 
             objetivos digitales con soluciones innovadoras y resultados medibles.
           </p>
@@ -145,28 +145,28 @@ function PortfolioSection() {
         </div>
 
         {/* Projects Grid */}
-        <div className={styles.portfolioGrid}>
-          {projectsData.map((project, index) => (
+      <div className={styles.portfolioGrid}>
+        {projectsData.map((project, index) => (
             <div 
               key={project.id} 
               className={styles.projectWrapper}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <ProjectCard 
-                image={project.image}
+          <ProjectCard
+            image={project.image}
                 video={project.video}
-                client={project.client}
-                title={project.title}
-                description={project.description}
-                tags={project.tags}
-                id={project.id}
+            client={project.client}
+            title={project.title}
+            description={project.description}
+            tags={project.tags}
+            id={project.id}
                 category={project.category}
                 year={project.year}
                 impact={project.impact}
                 status={project.status}
-              />
+          />
             </div>
-          ))}
+        ))}
         </div>
 
         {/* CTA Section */}
